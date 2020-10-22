@@ -1,3 +1,5 @@
+import { ImagePickerComponent } from './../../../components/image-picker/image-picker.component';
+import { LocationPickerComponent } from './../../../components/location-picker/location-picker.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NewOfferPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [NewOfferPage]
+  declarations: [NewOfferPage,
+  LocationPickerComponent,
+  ImagePickerComponent]
 })
 export class NewOfferPageModule {}

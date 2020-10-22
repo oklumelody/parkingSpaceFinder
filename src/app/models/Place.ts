@@ -3,5 +3,8 @@ export default interface Place {
     title: string,
     description: string,
     imageUrl: string,
-    price: number
+    price: number,
+    availableFrom: Date,
+    availableTo: Date,
+    userId: string
 }

@@ -2,9 +2,8 @@ import { AuthService } from './services/auth.service';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
+import { Plugins, Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-root',
@@ -12,20 +11,36 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  dark = false;
+
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
     private authService: AuthService,
     private router: Router
   ) {
     this.initializeApp();
+    const prefersColor = window.matchMedia('(prefers-color-scheme: light)');
+    this.dark = prefersColor.matches;
+    this.updateDarkMode();
+    console.log(this.dark);
+    prefersColor.addEventListener(
+      'change',
+      mediaQuery => {
+        this.dark = mediaQuery.matches;
+        this.updateDarkMode();
+      }
+    );
+  }
+
+  updateDarkMode() {
+    document.body.classList.toggle('dark', this.dark);
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+     if(Capacitor.isPluginAvailable('SplashScreen')) {
+       Plugins.SplashScreen.hide();
+     }
     });
   }
 
