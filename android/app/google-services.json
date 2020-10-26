@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "316457555",
+    "firebase_url": "https://ionic-booking-93ce3.firebaseio.com",
+    "project_id": "ionic-booking-93ce3",
+    "storage_bucket": "ionic-booking-93ce3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316457555:android:464674bff31e67c303fca6",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316457555-hvb97s4suum3ram24048ch456vd67r3k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.starter",
+            "certificate_hash": "b2d3e9590014cb7f6b2979c059704c913e0e6760"
+          }
+        },
+        {
+          "client_id": "316457555-juivbus6rlesl0iv3ssfjq858kqsdvca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm1o9sNrLAIepuJ76EF8G5B_Q3zhri61M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316457555-juivbus6rlesl0iv3ssfjq858kqsdvca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
