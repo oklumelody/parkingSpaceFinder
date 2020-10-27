@@ -1,3 +1,4 @@
+import { BookingService } from './../services/booking.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingsPage implements OnInit {
 
-  constructor() { }
+  firebase;
+
+  constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
+    this.bookingService.getfirebase().subscribe({
+      next: (data) => {
+        this.firebase = data;
+        console.log(this.firebase);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 
 }

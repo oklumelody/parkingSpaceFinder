@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class BookingService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+
+  getfirebase(){
+    console.log("bookings");
+    return this.http.get('https://ionic-booking-93ce3.firebaseio.com/test.json');
+  }
+
 }

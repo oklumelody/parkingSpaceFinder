@@ -39,7 +39,6 @@ export class AuthService implements OnDestroy{
     );
     let user = new User(userData.localId, userData.email, userData.idToken, expirationTime)
     this._user.next(user);
-    console.log(user.tokenDuration);
     this.autoLogout(user.tokenDuration);
     this.storeAuthData(userData.localId, userData.idToken, expirationTime.toISOString(), userData.email);
   }
@@ -69,8 +68,8 @@ export class AuthService implements OnDestroy{
      if(!storedData || !storedData.value){
        return null;
      }
-     const Data = JSON.parse(storedData.value) as {token: string; tokenExperationDate: string; userId: string; email: string};
-     const experationTime = new Date(Data.tokenExperationDate);
+     const Data = JSON.parse(storedData.value) as {token: string; tokenExpirationDate: string; userId: string; email: string};
+     const experationTime = new Date(Data.tokenExpirationDate);
      if (experationTime <= new Date()){
        return null;
      }

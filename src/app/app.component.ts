@@ -30,7 +30,6 @@ export class AppComponent implements OnInit, OnDestroy{
     const prefersColor = window.matchMedia('(prefers-color-scheme: light)');
     this.dark = prefersColor.matches;
     this.updateDarkMode();
-    console.log(this.dark);
     prefersColor.addEventListener(
       'change',
       mediaQuery => {
@@ -48,7 +47,10 @@ export class AppComponent implements OnInit, OnDestroy{
       this.prevAuthState = isauth;
     });
 
-    console.log('Initializing HomePage');
+    const isPushNotificationsAvailable = Capacitor.isPluginAvailable('PushNotifications');
+
+    if (isPushNotificationsAvailable) {
+      console.log('Initializing HomePage');
 
     // Request permission to use push notifications
     // iOS will prompt user and return if they granted permission or not
@@ -89,6 +91,7 @@ export class AppComponent implements OnInit, OnDestroy{
         alert('Push action performed: ' + JSON.stringify(notification));
       }
     );
+    }
   }
 
   ngOnDestroy(){

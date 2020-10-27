@@ -4,6 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
+
+// import { registerWebPlugin } from '@capacitor/core';
+// import { FacebookLogin } from '@capacitor-community/facebook-login';
+// registerWebPlugin(FacebookLogin);
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.page.html',
@@ -22,6 +27,19 @@ export class AuthPage implements OnInit {
   ngOnInit() {
   }
 
+  // async facebookLogin(){
+  //   const FACEBOOK_PERMISSIONS = ['email', 'user_birthday', 'user_photos', 'user_gender'];
+  //   const result = await FacebookLogin.login({ permissions: FACEBOOK_PERMISSIONS });
+    
+  //   if (result.accessToken) {
+  //     console.log(result);
+  //     // Login successful.
+  //     console.log(`Facebook access token is ${result.accessToken.token}`);
+  //   } else{
+
+  //   }
+  // }
+
   auth(email, password) {
     this.isLoading = true;
     this.loadingCtrl
@@ -35,13 +53,12 @@ export class AuthPage implements OnInit {
           authObs = this.authService.signup(email, password)
         }
         authObs.subscribe(response => {
-          console.log(response);
+          // console.log(response);
           this.isLoading = false;
           loadingEl.dismiss();
           this.router.navigateByUrl('/places/tabs/discover');
         }, error => {
           loadingEl.dismiss();
-          console.log(error.error.error.message);
           let code = error.error.error.message;
           let message = 'Somthing went Wrong';
           if(code === 'EMAIL_EXISTS') {
@@ -61,7 +78,6 @@ export class AuthPage implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form?.valid);
     if (!form?.valid) {
       return;
     }
