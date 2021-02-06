@@ -77,6 +77,10 @@
 
   --ion-toolbar-background: var(--ion-color-primary);
   --ion-toolbar-color: var(--ion-color-primary-contrast);
+
+  -webkit-transition: background-color 3s linear;
+    -ms-transition: background-color 3s linear;
+    transition: background-color 3s linear;
 }
 
 /*
@@ -186,6 +190,9 @@ body.dark {
   --ion-item-background: #000000;
 
   --ion-card-background: #1c1c1d;
+  -webkit-transition: background-color 3s linear;
+    -ms-transition: background-color 3s linear;
+    transition: background-color 3s linear;
 }
 
 /*

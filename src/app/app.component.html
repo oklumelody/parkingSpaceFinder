@@ -1,30 +1,81 @@
 <ion-app>
   <ion-menu side="start" menuId="primaryMenu">
-    <ion-header>
+    <ion-header translucent>
       <ion-toolbar>
-        <ion-title>Booking App</ion-title>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/places/tabs/discover" icon="chevron-back"></ion-back-button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
         <ion-menu-toggle menu="primaryMenu">
+          <ion-item  lines="none" routerLink="/places/tabs/discover">
+            <div class='center-button'>
+            <ion-button  class="round">
+              <ion-icon slot="icon-only" name="home"></ion-icon>
+            </ion-button>
+            </div>
+           </ion-item>  
+        </ion-menu-toggle>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div class='center-button'>
+                <ion-button  class="round">
+                  <ion-icon slot="icon-only" name="home"></ion-icon>
+                </ion-button>
+                </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+            <ion-label>Home</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-menu-toggle menu="primaryMenu">
           <ion-item lines="none" routerLink="/places/tabs/discover">
-            <ion-icon name="business" slot="start"></ion-icon>
-            <ion-label>Discover Places</ion-label>
+            <div class='center-button'>
+              <ion-button  class="round">
+                <ion-icon slot="icon-only" name="person"></ion-icon>
+              </ion-button>
+            </div>
           </ion-item>
+          <!-- <div class='center-button'>
+            <ion-label>Profile</ion-label>
+          </div> -->
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="primaryMenu">
+          <ion-item lines="none" routerLink="/places/tabs/discover">
+            <div class='center-button'>
+              <ion-button  class="round">
+                <ion-icon slot="icon-only" name="locate"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-item>
+          <!-- <div class='center-button'>
+            <ion-label>Request for space</ion-label>
+          </div> -->
         </ion-menu-toggle>
         <ion-menu-toggle menu="primaryMenu">
         <ion-item lines="none" routerLink="/bookings">
-          <ion-icon name="checkbox-outline" slot="start"></ion-icon>
-          <ion-label>Your Bookings</ion-label>
+          <div class='center-button'>
+            <ion-button  class="round">
+              <ion-icon slot="icon-only" name="mail"></ion-icon>
+            </ion-button>
+          </div>
         </ion-item>
+        <!-- <div class='center-button'>
+          <ion-label>My request</ion-label>
+        </div> -->
         </ion-menu-toggle>
-        <ion-menu-toggle menu="primaryMenu">
+        <!-- <ion-menu-toggle menu="primaryMenu">
         <ion-item lines="none" (click)="onLogout()" button>
           <ion-icon name="exit" slot="start"></ion-icon>
           <ion-label>Logout</ion-label>
         </ion-item>
-        </ion-menu-toggle>
+        </ion-menu-toggle> -->
         <ion-menu-toggle>
           <ion-item>
             <ion-icon slot="start" name="moon"></ion-icon>

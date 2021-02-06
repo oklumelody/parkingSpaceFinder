@@ -3,7 +3,6 @@
     <ion-title>Authenticate</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <ion-grid>
@@ -51,4 +50,21 @@
       </ion-row>
     </ion-grid>
   </form>
+  <!-- <div class="container">
+    <ng-container *ngIf="!otpSent; else otpContainer">
+      <div class="sec-container">
+        <input [(ngModel)]="phoneNumber" class="get-input" placeholder="Phone" type="tel">
+        <button (click)="sendOtp()" class="button-press">Get OTP</button>
+      </div>
+    </ng-container>
+    <ng-template #otpContainer>
+      <div class="sec-container">
+        <input [(ngModel)]="otp" class="get-input" type="number">
+        <button (click)="signIn()" class="button-press">Sign In</button>
+      </div>
+    </ng-template>
+    <div id="sign-in-button"></div>
+  </div> -->
+  <!-- <Pin-Validation [theme]="'val-underline'" [length]="6"
+  [type]="'number'" (codeNumber)="codeNumber($event)"></Pin-Validation> -->
 </ion-content>

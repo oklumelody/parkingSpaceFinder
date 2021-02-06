@@ -4,17 +4,16 @@
 
 export const environment = {
   production: false,
-};
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCkUlsuXHAraA5XpOeBZgCjt5B4BYqQrLE",
-  authDomain: "fir-demo-d233a.firebaseapp.com",
-  databaseURL: "https://fir-demo-d233a.firebaseio.com",
-  projectId: "fir-demo-d233a",
-  storageBucket: "fir-demo-d233a.appspot.com",
-  messagingSenderId: "244334092849",
-  appId: "1:244334092849:web:a84efa14e9fa9e815dab10",
-  measurementId: "G-D9GD8TQJ3T"
+  firebaseConfig: {
+    apiKey: "AIzaSyBH2EwcMrhydxiw9z2NE7u92EiqAxZQ-Rg",
+    authDomain: "ionic-booking-93ce3.firebaseapp.com",
+    databaseURL: "https://ionic-booking-93ce3.firebaseio.com",
+    projectId: "ionic-booking-93ce3",
+    storageBucket: "ionic-booking-93ce3.appspot.com",
+    messagingSenderId: "316457555",
+    appId: "1:316457555:web:08035fb7d64cfa3503fca6",
+    measurementId: "G-2DQ1ME1LXP"
+  }
 };
 /*
  * For easier debugging in development mode, you can import the following file

@@ -5,6 +5,11 @@ import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
 
+import * as firebase from 'firebase';
+
+// import * as firebase from 'firebase/app';
+
+
 // import { registerWebPlugin } from '@capacitor/core';
 // import { FacebookLogin } from '@capacitor-community/facebook-login';
 // registerWebPlugin(FacebookLogin);
@@ -19,13 +24,95 @@ export class AuthPage implements OnInit {
   isLoading = false;
   isLogin = true;
 
+  // otpSent: boolean = false;
+  // phoneNumber = null;
+  // otp = null;
+  // recaptchaVerifier;
+  // confirmationResult;
+  // user;
+
+
+  // otpSent: boolean = false;
+  // recaptchaVerifier: firebase.auth.RecaptchaVerifier;
+  // otpconfirmationResult: firebase.auth.ConfirmationResult;
+  // phoneNumber:string = "";
+  // confirmationResult;
+
   constructor(private authService: AuthService,
     private router: Router,
     private loadingCtrl: LoadingController,
     private alertCtrl: AlertController) { }
 
   ngOnInit() {
+    // this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+
+    // this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+    //   'size': 'invisible'
+    //   });
   }
+
+  codeNumber(e){
+    // console.log(e);
+  }
+
+
+  // sendOtp(){
+  //   console.log('+355' + this.phoneNumber);
+  //   firebase.auth().signInWithPhoneNumber('+' + this.phoneNumber, this.recaptchaVerifier)
+  //   .then((confirmationResult) => {
+  //   // SMS sent. Prompt user to type the code from the message, then sign the
+  //   // user in with confirmationResult.confirm(code).
+  //   this.confirmationResult = confirmationResult;
+  //   console.log(this.confirmationResult);
+  //   this.otpSent = true;
+  //   }).catch(err => {
+  //   console.log(err)
+  //   })
+  // }
+
+
+  // signIn(){
+  //   this.confirmationResult.confirm(this.otp).then(user=>{
+  //     this.user = user;
+  //     console.log(user);
+  //     })
+  // }
+
+  // signIn(phoneNumber: number){
+  //   const appVerifier = this.recaptchaVerifier;
+  //   const phoneNumberString = "+" + phoneNumber;
+  //   firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)
+  //     .then( async (confirmationResult) => {
+  //       // SMS sent. Prompt user to type the code from the message, then sign the
+  //       // user in with confirmationResult.confirm(code).
+  //       let prompt = await this.alertCtrl.create({
+  //       inputs: [{ name: 'confirmationCode', placeholder: 'Confirmation Code' }],
+  //       buttons: [
+  //         { text: 'Cancel',
+  //           handler: data => { console.log('Cancel clicked'); }
+  //         },
+  //         { text: 'Send',
+  //           handler: data => {
+  //             confirmationResult.confirm(data.confirmationCode)
+  //             .then(function (result) {
+  //               // User signed in successfully.
+  //               console.log(result.user);
+  //               // ...
+  //             }).catch(function (error) {
+  //               // User couldn't sign in (bad verification code?)
+  //               // ...
+  //             });
+  //           }
+  //         }
+  //       ]
+  //     });
+  //     await prompt.present();
+  //   })
+  //   .catch(function (error) {
+  //     console.error("SMS not sent", error);
+  //   });
+  
+  // }
 
   // async facebookLogin(){
   //   const FACEBOOK_PERMISSIONS = ['email', 'user_birthday', 'user_photos', 'user_gender'];
@@ -56,7 +143,7 @@ export class AuthPage implements OnInit {
           // console.log(response);
           this.isLoading = false;
           loadingEl.dismiss();
-          this.router.navigateByUrl('/places/tabs/discover');
+          this.router.navigateByUrl('/verify');
         }, error => {
           loadingEl.dismiss();
           let code = error.error.error.message;

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Verify</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-md="6" offset-md="3">
+          <div id="wrapper">
+            <div id="dialog">
+              <h3>Please enter the 6-digit verification code we sent via SMS:</h3>
+              <span>(we want to make sure it's you before we contact our movers)</span>
+              <div id="form">
+                <form [ngClass]="[isWrong ? 'wrong': '', shake ? 'shake': '']" [formGroup]="verifyform" (ngSubmit)="onSubmit()">
+                  <input formControlName="first" #inp1 (keyup)="inpController($event,inp2,'')" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                  <input formControlName="second" #inp2 (keyup)="inpController($event,inp3, inp1)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                  <input formControlName="third" #inp3 (keyup)="inpController($event,inp4, inp2)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                  <input formControlName="forth" #inp4 (keyup)="inpController($event,inp5, inp3)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                  <input formControlName="fifth" #inp5 (keyup)="inpController($event,inp6, inp4)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                  <input formControlName="sixth" #inp6 (keyup)="inpController($event,'', inp5)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                  <button [disabled]="!verifyform.valid" type="submit" class="btn btn-primary btn-embossed">Verify</button>
+                </form>
+              </div>
+              <div>
+                Didn't receive the code?<br />
+                <a>Send code again</a><br />
+                <a>Change phone number</a>
+              </div>
+            </div>
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

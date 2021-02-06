@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy{
     private router: Router
   ) {
     this.initializeApp();
-    const prefersColor = window.matchMedia('(prefers-color-scheme: light)');
+    const prefersColor = window.matchMedia('(prefers-color-scheme: dark)');
     this.dark = prefersColor.matches;
     this.updateDarkMode();
     prefersColor.addEventListener(
