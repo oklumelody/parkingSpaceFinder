@@ -1,70 +1,92 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Authenticate</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="toolbar-selected">
+    <ion-title class="labels">Sign up</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <div style="height: 20px;"></div>
+  <svg id="placeholder" xmlns="http://www.w3.org/2000/svg" width="112" height="130" viewBox="0 0 132 160" class="svg-center">
+    <path id="Path" d="M112.846,19.48a66.1,66.1,0,0,0-93.4,93.569L65.979,160l46.534-46.618A66.711,66.711,0,0,0,112.846,19.48Z" fill="#f3705b"/>
+    <path id="Path-2" data-name="Path" d="M46,92A46,46,0,1,1,92,46,46.092,46.092,0,0,1,46,92Z" transform="translate(20 21)" fill="#fff"/>
+    <path id="Shape" d="M0,55V0H19.518c8.6,0,14.557,1.657,18.526,4.97S44,13.253,44,20.211q0,9.939-5.955,14.909c-3.97,2.982-9.924,4.639-18.2,4.639H12.241V55Z" transform="translate(50 39)" fill="#435b6c"/>
+  </svg>
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <ion-grid>
       <ion-row>
         <ion-col size-sm="6" offset-sm="3">
           <ion-list>
-            <ion-item>
-              <ion-label position="floating">E-Mail</ion-label>
+            <ion-item class="input-box">
+              <ion-label style="color: grey;" position="floating">Enter email</ion-label>
               <ion-input type="email" ngModel name="email" required email #emailCtrl="ngModel"></ion-input>
             </ion-item>
-            <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none">
+            <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none" class="input-box">
               <ion-label>
                 Should be a valid email address.
               </ion-label>
             </ion-item>
-            <ion-item>
-              <ion-label position="floating">Password</ion-label>
+            <ion-item class="input-box">
+              <ion-label style="color: grey;" position="floating">Enter password</ion-label>
               <ion-input type="password" ngModel name="password" required minlength="6" #passwordCtrl="ngModel">
               </ion-input>
             </ion-item>
-            <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines="none">
+            <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines="none" class="input-box">
               <ion-label>
                 Should at least be 6 characters long.
+              </ion-label>
+            </ion-item>
+            <ion-item class="input-box">
+              <ion-label style="color: grey;" position="floating">Confirm password</ion-label>
+              <ion-input type="password" ngModel name="confirmPassword" required minlength="6" #passwordCtrl="ngModel">
+              </ion-input>
+            </ion-item>
+            <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines="none" class="input-box">
+              <ion-label>
+                Passwords do not match.
               </ion-label>
             </ion-item>
           </ion-list>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size-sm="6" offset-sm="3">
-          <ion-button type="button" color="primary" fill="clear" expand="block" (click)="onSwitchAuthMode()">
+        <ion-col size-sm="6">
+          <!-- <ion-button type="button" color="primary" fill="clear" expand="block" (click)="onSwitchAuthMode()">
             Switch to {{ isLogin ? 'Signup' : 'Login' }}
-          </ion-button>
-          <ion-button type="submit" color="primary" (click)="onSubmit()" expand="block" [disabled]="!f.valid">
+          </ion-button> -->
+          <ion-button type="submit" style="--background: #20c4ac;" (click)="onSubmit()" expand="block" [disabled]="!f.valid">
             {{ isLogin ? 'Login' : 'Signup' }}
           </ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
+        <ion-col size="12" style="text-align: center;">
+        <ion-label class="labels">or</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
         <ion-col size="12">
-          <!-- <ion-button expand="block" fill="clear" shape="round" (click)="facebookLogin()">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </ion-button> -->
+          <ion-button expand="block" fill="clear" shape="round" (click)="facebookLogin()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 31.603 32">
+              <g id="search" transform="translate(-0.291)">
+                <path id="Path" d="M7,10.739,5.9,14.914,1.882,15A16.336,16.336,0,0,1,1.766,0L5.344.667,6.911,4.284A9.742,9.742,0,0,0,7,10.739Z" transform="translate(0.291 8.667)" fill="#fbbb00"/>
+                <path id="Path-2" data-name="Path" d="M16,2.9a14.778,14.778,0,0,1-.358,3.24A15.42,15.42,0,0,1,9.882,15l-4.669-.227-.661-3.912a9.392,9.392,0,0,0,4.2-4.723H0V0H15.714A14.76,14.76,0,0,1,16,2.9Z" transform="translate(15.894 13.416)" fill="#518ef8"/>
+                <path id="Path-3" data-name="Path" d="M24,9.382h0A15.563,15.563,0,0,1,14.029,13,15.865,15.865,0,0,1,0,4.358L5.161,0a9.487,9.487,0,0,0,8.868,6.338A9.2,9.2,0,0,0,18.811,5Z" transform="translate(2 19)" fill="#28b446"/>
+                <path id="Path-4" data-name="Path" d="M24,3.709,18.907,7.983a9.128,9.128,0,0,0-4.942-1.448A9.372,9.372,0,0,0,5.123,13L0,8.7H0A15.679,15.679,0,0,1,13.964,0,15.429,15.429,0,0,1,24,3.709Z" transform="translate(2)" fill="#f14336"/>
+              </g>
+            </svg>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="8" style="text-align: center;">
+        <ion-label class="labels" style="font-size: smaller;">Already have an account?</ion-label></ion-col>
+        <ion-col size="3">
+          <ion-button type="button" fill="clear" expand="block" (click)="onSwitchAuthMode()" style="font-size: smaller; margin-top: -8px;
+          margin-left: -25px;
+          margin-right: 1px; color: coral;text-decoration: underline; opacity: 0.8;">
+            {{ isLogin ? 'Sign up' : 'Sign in' }}
+          </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
-  <!-- <div class="container">
-    <ng-container *ngIf="!otpSent; else otpContainer">
-      <div class="sec-container">
-        <input [(ngModel)]="phoneNumber" class="get-input" placeholder="Phone" type="tel">
-        <button (click)="sendOtp()" class="button-press">Get OTP</button>
-      </div>
-    </ng-container>
-    <ng-template #otpContainer>
-      <div class="sec-container">
-        <input [(ngModel)]="otp" class="get-input" type="number">
-        <button (click)="signIn()" class="button-press">Sign In</button>
-      </div>
-    </ng-template>
-    <div id="sign-in-button"></div>
-  </div> -->
-  <!-- <Pin-Validation [theme]="'val-underline'" [length]="6"
-  [type]="'number'" (codeNumber)="codeNumber($event)"></Pin-Validation> -->
 </ion-content>

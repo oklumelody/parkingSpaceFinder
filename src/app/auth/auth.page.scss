@@ -1,0 +1,25 @@
+.toolbar-selected{
+    --background: white;
+    --border-style: none;
+    }
+
+.labels{
+    color: grey;
+    text-align: center;
+}
+
+.svg-center{
+    display: block;
+    margin: auto
+}
+
+ion-content{
+    --ion-background-color:white;
+}
+
+.input-box{
+    height: 44px;
+    font-size: small;
+    color: rgb(150, 150, 150);
+    opacity: 0.5;
+}
