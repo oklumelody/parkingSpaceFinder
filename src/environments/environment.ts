@@ -17,6 +17,7 @@ export const environment = {
    firebaseConfig : {
     apiKey: "AIzaSyAw-v3drkN5boytU4ndhvuYQWZtdPSER0M",
     authDomain: "parkingapp-e0199.firebaseapp.com",
+    databaseURL:"https://parkingapp-e0199-default-rtdb.firebaseio.com/",
     projectId: "parkingapp-e0199",
     storageBucket: "parkingapp-e0199.appspot.com",
     messagingSenderId: "861604177518",

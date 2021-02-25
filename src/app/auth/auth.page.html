@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar class="toolbar-selected">
-    <ion-title class="labels">Sign up</ion-title>
+    <ion-title class="labels"> {{ isLogin ? 'Login' : 'Signup' }}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -20,7 +20,7 @@
               <ion-input type="email" ngModel name="email" required email #emailCtrl="ngModel"></ion-input>
             </ion-item>
             <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none" class="input-box">
-              <ion-label>
+              <ion-label style="color: red;">
                 Should be a valid email address.
               </ion-label>
             </ion-item>
@@ -30,7 +30,7 @@
               </ion-input>
             </ion-item>
             <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines="none" class="input-box">
-              <ion-label>
+              <ion-label style="color: red;">
                 Should at least be 6 characters long.
               </ion-label>
             </ion-item>
@@ -40,7 +40,7 @@
               </ion-input>
             </ion-item>
             <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines="none" class="input-box">
-              <ion-label>
+              <ion-label style="color: red;">
                 Passwords do not match.
               </ion-label>
             </ion-item>
