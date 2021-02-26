@@ -9,6 +9,17 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-header>  
+   <ion-toolbar color="primary">  
+     <ion-title>Ionic Modal Example</ion-title>  
+   </ion-toolbar>  
+ </ion-header>   
+ <ion-content class="ion-padding" color="light">  
+   <h1>Ionic Modal Controller</h1>  
+   <ion-button expand="round" color="success" (click)="showModal()">  
+     Show Modal 
+   </ion-button>  
+ </ion-content>  
 <ion-content>
   <!-- <ion-row>
     <ion-col class="text-center">
@@ -32,11 +43,11 @@
   <ion-button class="login-button" (click)="signOut()" expand="full" fill="solid" color="danger">
     Logout from Facebook
   </ion-button> -->
-  <ion-segment (ionChange)="onFilterUpdate($event)" value="all">
+  <!-- <ion-segment (ionChange)="onFilterUpdate($event)" value="all">
     <ion-segment-button value="all" >All Places</ion-segment-button>
     <ion-segment-button value="new">New Places</ion-segment-button>
-  </ion-segment>
-  <ion-grid>
+  </ion-segment> -->
+  <!-- <ion-grid>
     <ion-row>
       <ion-col size="12" size-md="8" offset-md="2">
         <ion-card>
@@ -71,5 +82,5 @@
         </ion-virtual-scroll>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 </ion-content>

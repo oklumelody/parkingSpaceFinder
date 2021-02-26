@@ -19,13 +19,12 @@ import * as firebase from 'firebase';
 import { environment } from '../environments/environment';
 import { ValidationModule } from 'validation-pin';
 
-
 firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule, HttpClientModule, ReactiveFormsModule, 
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule, HttpClientModule, ReactiveFormsModule,ModalPageModule 
   //  AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
@@ -35,4 +34,4 @@ firebase.initializeApp(environment.firebaseConfig);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {} 

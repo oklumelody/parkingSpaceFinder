@@ -26,7 +26,11 @@ const routes: Routes = [
     redirectTo: 'places/tabs/discover',
     pathMatch: 'full'
   },
-  { path: '**', redirectTo: 'places/tabs/dicover' }
+  { path: '**', redirectTo: 'places/tabs/dicover' },
+  {
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
+  }
 ];
 
 @NgModule({
